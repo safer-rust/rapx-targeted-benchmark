@@ -1,0 +1,37 @@
+{
+  "crate": "slotmap",
+  "crate_version": "1.1.1",
+  "rapx_version": "0.7.53",
+  "toolchain": "nightly-2026-10-04",
+  "status": "COMPLETE",
+  "declared_api_targets": 43,
+  "active_targets": 43,
+  "counts": {
+    "SOUND": 16,
+    "UNSOUND": 15,
+    "UNKNOWN": 12,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 37.21,
+    "UNSOUND": 34.88,
+    "UNKNOWN": 27.91,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 51,
+  "ignored_log_records": 8,
+  "ignored_log_targets": [
+    "<basic::Slot<T> as std::ops::Drop>::drop",
+    "<basic::Drain<'a, K, V> as std::ops::Drop>::drop",
+    "<dense::Drain<'a, K, V> as std::ops::Drop>::drop",
+    "<hop::Slot<T> as std::ops::Drop>::drop",
+    "<hop::Drain<'a, K, V> as std::ops::Drop>::drop",
+    "<secondary::Drain<'a, K, V> as std::ops::Drop>::drop",
+    "<sparse_secondary::Drain<'a, K, V> as std::ops::Drop>::drop",
+    "<util::PanicOnDrop as std::ops::Drop>::drop"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 116.6,
+  "finished_at": "2026-10-05T05:38:47.716966+00:00"
+}
