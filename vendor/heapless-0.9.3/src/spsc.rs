@@ -598,6 +598,7 @@ where
 impl<T, S: Storage> Eq for QueueInner<T, S> where T: Eq {}
 
 /// An iterator over the items of a queue.
+#[rapx::invariant(ValidNum(index <= len))]
 pub struct Iter<'a, T> {
     rb: &'a QueueView<T>,
     index: usize,
@@ -615,6 +616,7 @@ impl<T> Clone for Iter<'_, T> {
 }
 
 /// An iterator over the items of a queue.
+#[rapx::invariant(ValidNum(index <= len))]
 pub struct IterMut<'a, T> {
     rb: &'a QueueView<T>,
     index: usize,

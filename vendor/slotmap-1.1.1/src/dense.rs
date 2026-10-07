@@ -30,6 +30,8 @@ struct Slot {
 ///
 /// See [crate documentation](crate) for more details.
 #[derive(Debug)]
+#[rapx::invariant(ValidNum(keys.len() == values.len()))]
+#[rapx::invariant(ValidNum(keys.len() < slots.len()))]
 pub struct DenseSlotMap<K: Key, V> {
     keys: Vec<K>,
     values: Vec<V>,

@@ -116,6 +116,7 @@ impl<T> Slot<T> {
 /// ammo[alice] = 0;
 /// ```
 #[derive(Debug, Clone)]
+#[rapx::invariant(ValidNum(num_elems < slots.len()))]
 pub struct SecondaryMap<K: Key, V> {
     slots: Vec<Slot<V>>,
     num_elems: usize,

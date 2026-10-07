@@ -126,6 +126,7 @@ impl<T: fmt::Debug> fmt::Debug for Slot<T> {
 ///
 /// See [crate documentation](crate) for more details.
 #[derive(Debug)]
+#[rapx::invariant(ValidNum(num_elems < slots.len()))]
 pub struct SlotMap<K: Key, V> {
     slots: Vec<Slot<V>>,
     free_head: u32,

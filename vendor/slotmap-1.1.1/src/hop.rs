@@ -149,6 +149,7 @@ impl<T: fmt::Debug> fmt::Debug for Slot<T> {
     note = "Use `SlotMap` or `DenseSlotMap` instead, the `HopSlotMap` is no longer maintained and will be removed in 2.0."
 )]
 #[derive(Debug)]
+#[rapx::invariant(ValidNum(num_elems < slots.len()))]
 pub struct HopSlotMap<K: Key, V> {
     slots: Vec<Slot<V>>,
     num_elems: u32,

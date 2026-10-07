@@ -445,6 +445,8 @@ impl<'a, T: 'a + Array> Drop for Drain<'a, T> {
 /// Returned from [`SmallVec::drain_filter`][1].
 ///
 /// [1]: struct.SmallVec.html#method.drain_filter
+#[rapx::invariant(ValidNum(del <= idx))]
+#[rapx::invariant(ValidNum(idx <= old_len))]
 pub struct DrainFilter<'a, T, F>
 where
     F: FnMut(&mut T::Item) -> bool,
@@ -2489,6 +2491,7 @@ unsafe impl<A: Array> Send for SmallVec<A> where A::Item: Send {}
 /// Returned from [`SmallVec::into_iter`][1].
 ///
 /// [1]: struct.SmallVec.html#method.into_iter
+#[rapx::invariant(ValidNum(current <= end))]
 pub struct IntoIter<A: Array> {
     data: SmallVec<A>,
     current: usize,

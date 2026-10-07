@@ -37,6 +37,26 @@ archive checksums, and historical download ranks. Some API paths have more than
 one source annotation behind mutually exclusive `cfg` branches; they still
 count as one manifest target.
 
+## Struct invariants
+
+The vendored sources currently include 10 representation invariants that RAPx
+0.7.50 parses without changing their field projections:
+
+| Crate | Struct | Invariant |
+| --- | --- | --- |
+| `heapless` | `spsc::Iter`, `spsc::IterMut` | `index <= len` |
+| `smallvec` | `DrainFilter` | `del <= idx`, `idx <= old_len` |
+| `smallvec` | `IntoIter` | `current <= end` |
+| `slotmap` | `SlotMap`, `HopSlotMap`, `SecondaryMap` | `num_elems < slots.len()` |
+| `slotmap` | `DenseSlotMap` | `keys.len() == values.len()`, `keys.len() < slots.len()` |
+
+These are facts guaranteed by each type's constructors and state transitions.
+They are supplied to the already selected methods; they do not add entries to
+`targets.json`. `DrainFilter` and its invariant are feature-gated in `smallvec`.
+Pointer provenance, initialized storage prefixes, and relationships hidden
+behind atomics or trait-associated storage are not annotated because RAPx's
+current invariant syntax cannot express them reliably.
+
 ## Results
 
 Every completed branch run is committed by `github-actions[bot]` under:
