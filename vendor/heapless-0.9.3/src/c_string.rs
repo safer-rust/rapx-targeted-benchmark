@@ -18,6 +18,7 @@ use zeroize::Zeroize;
 ///
 /// It stores up to `N - 1` non-nul characters with a trailing nul terminator.
 #[derive(Clone, Hash)]
+#[rapx::invariant(ValidCStr(inner.buffer.buffer, inner.len))]
 pub struct CString<const N: usize, LenT: LenType = usize> {
     inner: Vec<u8, N, LenT>,
 }
@@ -63,6 +64,7 @@ impl<const N: usize, LenT: LenType> CString<N, LenT> {
     }
 
     #[rapx::verify]
+    #[rapx::requires(ValidCStr(bytes, bytes.len()))]
     /// Unsafely creates a [`CString`] from a byte slice.
     ///
     /// This function will copy the provided `bytes` to a [`CString`] without

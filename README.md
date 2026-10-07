@@ -39,11 +39,13 @@ count as one manifest target.
 
 ## Struct invariants
 
-The vendored sources currently include 10 representation invariants that RAPx
-0.7.50 parses without changing their field projections:
+The vendored sources currently include 11 representation invariants. RAPx
+0.7.55 accepts these annotations, and `--prepare-targets` resolves them to the
+intended fields:
 
 | Crate | Struct | Invariant |
 | --- | --- | --- |
+| `heapless` | `c_string::CString` | `ValidCStr(inner.buffer.buffer, inner.len)` |
 | `heapless` | `spsc::Iter`, `spsc::IterMut` | `index <= len` |
 | `smallvec` | `DrainFilter` | `del <= idx`, `idx <= old_len` |
 | `smallvec` | `IntoIter` | `current <= end` |
