@@ -1,0 +1,31 @@
+{
+  "crate": "bumpalo",
+  "crate_version": "3.20.3",
+  "rapx_version": "0.7.56",
+  "toolchain": "nightly-2026-10-08",
+  "status": "PARTIAL",
+  "declared_api_targets": 17,
+  "active_targets": 17,
+  "counts": {
+    "SOUND": 2,
+    "UNSOUND": 15,
+    "UNKNOWN": 0,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 11.76,
+    "UNSOUND": 88.24,
+    "UNKNOWN": 0.0,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 19,
+  "ignored_log_records": 2,
+  "ignored_log_targets": [
+    "<RewindGuard<'_, MIN_ALIGN> as core::ops::Drop>::drop",
+    "<Bump<MIN_ALIGN> as core::ops::Drop>::drop"
+  ],
+  "exit_code": 1,
+  "timed_out": false,
+  "seconds": 83.5,
+  "finished_at": "2026-10-09T10:41:36.200302+00:00"
+}
