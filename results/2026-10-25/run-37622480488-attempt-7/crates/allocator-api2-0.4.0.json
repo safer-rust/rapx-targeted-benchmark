@@ -1,0 +1,41 @@
+{
+  "crate": "allocator-api2",
+  "crate_version": "0.4.0",
+  "rapx_version": "0.7.62",
+  "toolchain": "nightly-2026-10-24",
+  "status": "COMPLETE",
+  "declared_api_targets": 61,
+  "active_targets": 61,
+  "counts": {
+    "SOUND": 14,
+    "UNSOUND": 26,
+    "UNKNOWN": 21,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 22.95,
+    "UNSOUND": 42.62,
+    "UNKNOWN": 34.43,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 92,
+  "ignored_log_records": 12,
+  "ignored_log_targets": [
+    "<&'a mut vec::Vec<T, A> as std::iter::IntoIterator>::into_iter",
+    "<&'a vec::Vec<T, A> as std::iter::IntoIterator>::into_iter",
+    "<<[T] as slice::SliceExt<T>>::to_vec_in2::DropGuard<'a, T, A> as std::ops::Drop>::drop",
+    "<<vec::drain::Drain<'_, T, A> as std::ops::Drop>::drop::DropGuard<'r, 'a, T, A> as std::ops::Drop>::drop",
+    "<<vec::into_iter::IntoIter<T, A> as std::ops::Drop>::drop::DropGuard<'_, T, A> as std::ops::Drop>::drop",
+    "<raw_vec::RawVec<T, A> as std::ops::Drop>::drop",
+    "<vec::Vec<T, A>::dedup_by::FillGapOnDrop<'a, T, A> as std::ops::Drop>::drop",
+    "<vec::Vec<T, A>::retain_mut::BackshiftOnDrop<'_, T, A> as std::ops::Drop>::drop",
+    "<vec::drain::Drain<'_, T, A> as std::ops::Drop>::drop",
+    "<vec::into_iter::IntoIter<T, A> as std::ops::Drop>::drop",
+    "<vec::set_len_on_drop::SetLenOnDrop<'_> as std::ops::Drop>::drop",
+    "<vec::splice::Splice<'_, I, A> as std::ops::Drop>::drop"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 37.42,
+  "finished_at": "2026-10-25T10:13:13.585906+00:00"
+}
