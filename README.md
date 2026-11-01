@@ -6,7 +6,7 @@ is annotated with `#[rapx::verify]`.
 
 The **Targeted RAPx verify** workflow has only `workflow_dispatch`; run it from
 the Actions page whenever a measurement is needed. The form has separate
-timeouts for ordinary crates and `smallvec`; their defaults are 15 and 120
+timeouts for ordinary crates and `smallvec`; their defaults are 30 and 240
 minutes respectively. Every run resolves and installs the newest non-yanked
 `rapx` release from crates.io, then runs:
 
