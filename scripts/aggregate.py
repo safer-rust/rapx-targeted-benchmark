@@ -3,6 +3,7 @@
 
 import argparse
 import json
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -33,6 +34,11 @@ def main() -> None:
     results.sort(key=lambda item: order.get(item["crate"], len(order)))
 
     counts = {key: sum(row["counts"][key] for row in results) for key in KEYS}
+    unknown_categories = Counter()
+    unsupported_operations = set()
+    for row in results:
+        unknown_categories.update(row.get("unknown_categories", {}))
+        unsupported_operations.update(row.get("unsupported_operations", []))
     total = sum(row["active_targets"] for row in results)
     output = {
         "rapx_version": args.rapx_version,
@@ -41,6 +47,8 @@ def main() -> None:
         "active_targets": total,
         "counts": counts,
         "percentages": {key: rate(counts[key], total) for key in KEYS},
+        "unknown_categories": dict(sorted(unknown_categories.items())),
+        "unsupported_operations": sorted(unsupported_operations),
         "created_at": datetime.now(timezone.utc).isoformat(),
         "crates": results,
     }
@@ -58,6 +66,14 @@ def main() -> None:
         "|---|---:|---:|",
     ]
     lines.extend(f"| {key} | {counts[key]} | {rate(counts[key], total):.2f}% |" for key in KEYS)
+    lines.extend(["", "| UNKNOWN category | Unproved checks |", "|---|---:|"])
+    if unknown_categories:
+        lines.extend(
+            f"| {category} | {count} |"
+            for category, count in sorted(unknown_categories.items())
+        )
+    else:
+        lines.append("| No classified UNKNOWN results | 0 |")
     lines.extend([
         "",
         "| Crate | Targets | SOUND | UNSOUND | UNKNOWN | NOT_RUN |",
@@ -70,6 +86,19 @@ def main() -> None:
             + " | ".join(cell(row["counts"][key], row_total) for key in KEYS)
             + " |"
         )
+    lines.extend(["", "## UNKNOWN categories and unsupported operations"])
+    has_diagnostics = False
+    for category, count in sorted(unknown_categories.items()):
+        lines.append(f"- UNKNOWN: {category} ({count} unproved checks)")
+        has_diagnostics = True
+    if unsupported_operations:
+        lines.extend(
+            f"- Unsupported operation: {operation}"
+            for operation in sorted(unsupported_operations)
+        )
+        has_diagnostics = True
+    if not has_diagnostics:
+        lines.append("- None reported")
     (args.output / "summary.md").write_text("\n".join(lines) + "\n")
 
 

@@ -16,6 +16,12 @@ from pathlib import Path
 ANSI = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
 HEADER = re.compile(r"\[rapx::verify\]\s*(?:function:|sequence:|unsafe impl)\s*(.+)")
 RESULT = re.compile(r"\b(?:result|verdict):\s*(SOUND|UNSOUND|UNKNOWN|SAFE|UNSAFE)\b")
+UNKNOWN_DETAIL = re.compile(
+    r"(?:├──|└──)?[^|]+\|\s*Unknown \((?P<reasons>.+?)\)"
+    r"(?: \(x(?P<count>\d+)\))?\s*$"
+)
+UNSUPPORTED_OPERATIONS = re.compile(r"\bunsupported operations:\s*$")
+OPERATION_DETAIL = re.compile(r"\s-\s*(?P<operation>.+?)\s*$")
 VERDICT_PRIORITY = {"SOUND": 0, "UNKNOWN": 1, "UNSOUND": 2}
 TARGET_ALIASES = {
     "heapless": {
@@ -80,44 +86,104 @@ def parse_log(text: str, intended_targets: list[str], crate_name: str) -> dict:
     clean = ANSI.sub("", text)
     records = []
     current = None
+    unknown_categories = Counter()
+    last_record = None
+    collecting_operations = False
     for line in clean.splitlines():
         header = HEADER.search(line)
         if header:
             if current is not None:
-                records.append((current, "UNKNOWN"))
+                records.append({
+                    "target": current,
+                    "verdict": "UNKNOWN",
+                    "categories": unknown_categories,
+                    "unsupported_operations": [],
+                })
             current = header.group(1).strip()
+            unknown_categories = Counter()
+            last_record = None
+            collecting_operations = False
             continue
+        if last_record is not None:
+            if UNSUPPORTED_OPERATIONS.search(line):
+                collecting_operations = True
+                continue
+            if collecting_operations:
+                operation = OPERATION_DETAIL.search(line)
+                if operation:
+                    last_record["unsupported_operations"].append(
+                        operation.group("operation")
+                    )
+                    continue
+                collecting_operations = False
+        detail = UNKNOWN_DETAIL.search(line)
+        if detail and current is not None:
+            count = int(detail.group("count") or 1)
+            for reason in detail.group("reasons").split("; "):
+                unknown_categories[reason] += count
         result = RESULT.search(line)
         if result and current is not None:
             verdict = {"SAFE": "SOUND", "UNSAFE": "UNSOUND"}.get(
                 result.group(1), result.group(1)
             )
-            records.append((current, verdict))
+            last_record = {
+                "target": current,
+                "verdict": verdict,
+                "categories": unknown_categories,
+                "unsupported_operations": [],
+            }
+            records.append(last_record)
             current = None
     if current is not None:
-        records.append((current, "UNKNOWN"))
+        records.append({
+            "target": current,
+            "verdict": "UNKNOWN",
+            "categories": unknown_categories,
+            "unsupported_operations": [],
+        })
 
     intended = {
         canonical_target(target, crate_name): target for target in intended_targets
     }
     matched = {}
+    matched_unknown_categories = {}
+    unsupported_operations = set()
     ignored = []
-    for label, verdict in records:
-        normalized = canonical_target(label, crate_name)
+    for record in records:
+        normalized = canonical_target(record["target"], crate_name)
         normalized = next(
             (candidate for candidate in target_candidates(normalized, crate_name)
              if candidate in intended),
             None,
         )
         if normalized is None:
-            ignored.append(label)
+            ignored.append(record["target"])
             continue
+        verdict = record["verdict"]
+        categories = record["categories"]
         previous = matched.get(normalized)
         if previous is None or VERDICT_PRIORITY[verdict] > VERDICT_PRIORITY[previous]:
             matched[normalized] = verdict
+            matched_unknown_categories[normalized] = (
+                categories.copy() if verdict == "UNKNOWN" else Counter()
+            )
+        elif verdict == "UNKNOWN" and previous == "UNKNOWN":
+            matched_unknown_categories[normalized].update(categories)
+        unsupported_operations.update(record["unsupported_operations"])
 
     counts = Counter(matched.values())
     counts["NOT_RUN"] = len(intended) - len(matched)
+    unknown_targets = []
+    category_counts = Counter()
+    for target, verdict in matched.items():
+        if verdict != "UNKNOWN":
+            continue
+        categories = matched_unknown_categories[target] or Counter({"unclassified": 1})
+        category_counts.update(categories)
+        unknown_targets.append({
+            "target": intended[target],
+            "categories": dict(sorted(categories.items())),
+        })
     return {
         "active_targets": len(intended),
         "observed_targets": len(matched),
@@ -125,6 +191,9 @@ def parse_log(text: str, intended_targets: list[str], crate_name: str) -> dict:
         "ignored_log_records": len(ignored),
         "ignored_log_targets": ignored,
         "counts": {key: counts[key] for key in ("SOUND", "UNSOUND", "UNKNOWN", "NOT_RUN")},
+        "unknown_categories": dict(sorted(category_counts.items())),
+        "unknown_targets": unknown_targets,
+        "unsupported_operations": sorted(unsupported_operations),
     }
 
 

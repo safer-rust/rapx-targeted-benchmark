@@ -74,6 +74,46 @@ class ParseResultsTest(unittest.TestCase):
             {"SOUND": 0, "UNSOUND": 0, "UNKNOWN": 1, "NOT_RUN": 0},
         )
 
+    def test_extracts_unknown_categories_from_property_rows(self):
+        log = """
+        00|RAPx|INFO|: [rapx::verify] function: api::one
+        00|RAPx|WARN|:           ├── InBound | Unknown (unsupported MIR; SMT: incomplete) (x2)
+        00|RAPx|WARN|:           └── Allocated | Unknown (timeout)
+        00|RAPx|WARN|:   result: UNKNOWN (3 unproved)
+        00|RAPx|INFO|:   unsupported operations:
+        00|RAPx|INFO|:     - MIR unavailable: core::slice::index
+        00|RAPx|INFO|:     - intrinsic: core::intrinsics::copy
+        """
+        result = run_one.parse_log(log, ["demo::api::one"], "demo")
+        self.assertEqual(
+            result["unknown_categories"],
+            {"SMT: incomplete": 2, "timeout": 1, "unsupported MIR": 2},
+        )
+        self.assertEqual(
+            result["unknown_targets"],
+            [{
+                "target": "demo::api::one",
+                "categories": {
+                    "SMT: incomplete": 2,
+                    "timeout": 1,
+                    "unsupported MIR": 2,
+                },
+            }],
+        )
+        self.assertEqual(
+            result["unsupported_operations"],
+            ["MIR unavailable: core::slice::index", "intrinsic: core::intrinsics::copy"],
+        )
+
+    def test_unknown_without_detail_is_reported_as_unclassified(self):
+        result = run_one.parse_log(
+            "00|RAPx|INFO|: [rapx::verify] function: api::one\n"
+            "00|RAPx|WARN|: result: UNKNOWN\n",
+            ["demo::api::one"],
+            "demo",
+        )
+        self.assertEqual(result["unknown_categories"], {"unclassified": 1})
+
     def test_release_time_nightly_is_pinned(self):
         data = {
             "crate": {"max_stable_version": "0.7.50"},
