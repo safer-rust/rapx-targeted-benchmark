@@ -19,6 +19,13 @@ artifact contain only the latest RAPx version, its release-time nightly, and
 `SOUND`, `UNSOUND`, `UNKNOWN`, and `NOT_RUN` counts and percentages. The pass
 rate is `SOUND / targets listed in targets.json`.
 
+Per-crate results retain UNKNOWN reasons from RAPx's property rows.
+`unknown_categories` counts unproved checks by reason, and `unknown_targets`
+lists those reasons per API target. The aggregate summary ends with a list of
+UNKNOWN categories and deduplicated unsupported operations (for example,
+unsupported MIR or intrinsics). Logs without detailed rows are marked
+`unclassified`.
+
 `NOT_RUN` means that RAPx emitted no verdict for that manifest target. Typical
 causes are a disabled Cargo feature or platform `cfg`, a per-crate timeout, or
 RAPx stopping or omitting a target before producing its result. It is not an
