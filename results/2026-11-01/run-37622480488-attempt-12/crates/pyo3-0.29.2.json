@@ -1,0 +1,28 @@
+{
+  "crate": "pyo3",
+  "crate_version": "0.29.2",
+  "rapx_version": "0.7.66",
+  "toolchain": "nightly-2026-10-31",
+  "status": "FAILED",
+  "declared_api_targets": 33,
+  "active_targets": 33,
+  "counts": {
+    "SOUND": 0,
+    "UNSOUND": 0,
+    "UNKNOWN": 0,
+    "NOT_RUN": 33
+  },
+  "percentages": {
+    "SOUND": 0.0,
+    "UNSOUND": 0.0,
+    "UNKNOWN": 0.0,
+    "NOT_RUN": 100.0
+  },
+  "observed_log_records": 0,
+  "ignored_log_records": 0,
+  "ignored_log_targets": [],
+  "exit_code": 1,
+  "timed_out": false,
+  "seconds": 12.49,
+  "finished_at": "2026-11-01T05:54:52.749099+00:00"
+}
