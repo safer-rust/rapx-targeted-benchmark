@@ -4,6 +4,7 @@ Results are grouped by run date in Asia/Shanghai time.
 
 | Date | Run | Commit | RAPx | Summary |
 |---|---:|---|---|---|
+| 2026-11-02 | [37622480488 (attempt 15)](https://github.com/safer-rust/rapx-targeted-benchmark/actions/runs/37622480488) | `e238b2f` | `0.7.68` | [results](2026-11-02/run-37622480488-attempt-15/summary.md) |
 | 2026-11-02 | [37622480488 (attempt 14)](https://github.com/safer-rust/rapx-targeted-benchmark/actions/runs/37622480488) | `e238b2f` | `0.7.68` | [results](2026-11-02/run-37622480488-attempt-14/summary.md) |
 | 2026-11-02 | [37622480488 (attempt 13)](https://github.com/safer-rust/rapx-targeted-benchmark/actions/runs/37622480488) | `e238b2f` | `0.7.67` | [results](2026-11-02/run-37622480488-attempt-13/summary.md) |
 | 2026-11-01 | [37622480488 (attempt 12)](https://github.com/safer-rust/rapx-targeted-benchmark/actions/runs/37622480488) | `e238b2f` | `0.7.66` | [results](2026-11-01/run-37622480488-attempt-12/summary.md) |
