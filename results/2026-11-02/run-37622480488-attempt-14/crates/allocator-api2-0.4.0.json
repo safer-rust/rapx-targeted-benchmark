@@ -1,0 +1,28 @@
+{
+  "crate": "allocator-api2",
+  "crate_version": "0.4.0",
+  "rapx_version": "0.7.68",
+  "toolchain": "nightly-2026-11-01",
+  "status": "TIMEOUT",
+  "declared_api_targets": 61,
+  "active_targets": 61,
+  "counts": {
+    "SOUND": 0,
+    "UNSOUND": 0,
+    "UNKNOWN": 0,
+    "NOT_RUN": 61
+  },
+  "percentages": {
+    "SOUND": 0.0,
+    "UNSOUND": 0.0,
+    "UNKNOWN": 0.0,
+    "NOT_RUN": 100.0
+  },
+  "observed_log_records": 0,
+  "ignored_log_records": 0,
+  "ignored_log_targets": [],
+  "exit_code": -15,
+  "timed_out": true,
+  "seconds": 1800.0,
+  "finished_at": "2026-11-02T06:30:45.400951+00:00"
+}
