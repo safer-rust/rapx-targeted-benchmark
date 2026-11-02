@@ -1,0 +1,28 @@
+{
+  "crate": "smallvec",
+  "crate_version": "1.16.2",
+  "rapx_version": "0.7.69",
+  "toolchain": "nightly-2026-11-01",
+  "status": "TIMEOUT",
+  "declared_api_targets": 40,
+  "active_targets": 40,
+  "counts": {
+    "SOUND": 0,
+    "UNSOUND": 0,
+    "UNKNOWN": 0,
+    "NOT_RUN": 40
+  },
+  "percentages": {
+    "SOUND": 0.0,
+    "UNSOUND": 0.0,
+    "UNKNOWN": 0.0,
+    "NOT_RUN": 100.0
+  },
+  "observed_log_records": 0,
+  "ignored_log_records": 0,
+  "ignored_log_targets": [],
+  "exit_code": -15,
+  "timed_out": true,
+  "seconds": 7200.01,
+  "finished_at": "2026-11-02T18:55:30.779579+00:00"
+}
