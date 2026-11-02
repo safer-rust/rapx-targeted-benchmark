@@ -6,11 +6,11 @@ on:
       timeout_minutes:
         description: Timeout for each crate except smallvec (minutes)
         required: true
-        default: "30"
+        default: "120"
       smallvec_timeout_minutes:
         description: Timeout for smallvec (minutes)
         required: true
-        default: "240"
+        default: "120"
 
 permissions:
   contents: write
