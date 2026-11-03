@@ -1,0 +1,28 @@
+{
+  "crate": "bitvec",
+  "crate_version": "1.1.1",
+  "rapx_version": "0.7.70",
+  "toolchain": "nightly-2026-11-02",
+  "status": "COMPLETE",
+  "declared_api_targets": 54,
+  "active_targets": 54,
+  "counts": {
+    "SOUND": 33,
+    "UNSOUND": 5,
+    "UNKNOWN": 16,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 61.11,
+    "UNSOUND": 9.26,
+    "UNKNOWN": 29.63,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 54,
+  "ignored_log_records": 0,
+  "ignored_log_targets": [],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 503.63,
+  "finished_at": "2026-11-03T01:49:59.717687+00:00"
+}

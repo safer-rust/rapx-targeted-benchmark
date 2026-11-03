@@ -1,0 +1,303 @@
+{
+  "rapx_version": "0.7.70",
+  "toolchain": "nightly-2026-11-02",
+  "crate_count": 10,
+  "active_targets": 564,
+  "counts": {
+    "SOUND": 82,
+    "UNSOUND": 32,
+    "UNKNOWN": 231,
+    "NOT_RUN": 219
+  },
+  "percentages": {
+    "SOUND": 14.54,
+    "UNSOUND": 5.67,
+    "UNKNOWN": 40.96,
+    "NOT_RUN": 38.83
+  },
+  "unknown_categories": {},
+  "unsupported_operations": [],
+  "created_at": "2026-11-03T03:41:46.254486+00:00",
+  "crates": [
+    {
+      "crate": "openssl",
+      "crate_version": "0.10.81",
+      "rapx_version": "0.7.70",
+      "toolchain": "nightly-2026-11-02",
+      "status": "COMPLETE",
+      "declared_api_targets": 166,
+      "active_targets": 166,
+      "counts": {
+        "SOUND": 8,
+        "UNSOUND": 1,
+        "UNKNOWN": 157,
+        "NOT_RUN": 0
+      },
+      "percentages": {
+        "SOUND": 4.82,
+        "UNSOUND": 0.6,
+        "UNKNOWN": 94.58,
+        "NOT_RUN": 0.0
+      },
+      "observed_log_records": 166,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 275.04,
+      "finished_at": "2026-11-03T01:46:09.172176+00:00"
+    },
+    {
+      "crate": "heapless",
+      "crate_version": "0.9.3",
+      "rapx_version": "0.7.70",
+      "toolchain": "nightly-2026-11-02",
+      "status": "TIMEOUT",
+      "declared_api_targets": 75,
+      "active_targets": 75,
+      "counts": {
+        "SOUND": 0,
+        "UNSOUND": 0,
+        "UNKNOWN": 0,
+        "NOT_RUN": 75
+      },
+      "percentages": {
+        "SOUND": 0.0,
+        "UNSOUND": 0.0,
+        "UNKNOWN": 0.0,
+        "NOT_RUN": 100.0
+      },
+      "observed_log_records": 0,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": -15,
+      "timed_out": true,
+      "seconds": 7200.01,
+      "finished_at": "2026-11-03T03:41:31.720164+00:00"
+    },
+    {
+      "crate": "bumpalo",
+      "crate_version": "3.20.3",
+      "rapx_version": "0.7.70",
+      "toolchain": "nightly-2026-11-02",
+      "status": "PARTIAL",
+      "declared_api_targets": 17,
+      "active_targets": 17,
+      "counts": {
+        "SOUND": 11,
+        "UNSOUND": 5,
+        "UNKNOWN": 1,
+        "NOT_RUN": 0
+      },
+      "percentages": {
+        "SOUND": 64.71,
+        "UNSOUND": 29.41,
+        "UNKNOWN": 5.88,
+        "NOT_RUN": 0.0
+      },
+      "observed_log_records": 17,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 1,
+      "timed_out": false,
+      "seconds": 2742.96,
+      "finished_at": "2026-11-03T02:27:15.792187+00:00"
+    },
+    {
+      "crate": "allocator-api2",
+      "crate_version": "0.4.0",
+      "rapx_version": "0.7.70",
+      "toolchain": "nightly-2026-11-02",
+      "status": "TIMEOUT",
+      "declared_api_targets": 61,
+      "active_targets": 61,
+      "counts": {
+        "SOUND": 0,
+        "UNSOUND": 0,
+        "UNKNOWN": 0,
+        "NOT_RUN": 61
+      },
+      "percentages": {
+        "SOUND": 0.0,
+        "UNSOUND": 0.0,
+        "UNKNOWN": 0.0,
+        "NOT_RUN": 100.0
+      },
+      "observed_log_records": 0,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": -15,
+      "timed_out": true,
+      "seconds": 7200.0,
+      "finished_at": "2026-11-03T03:41:36.253302+00:00"
+    },
+    {
+      "crate": "bitvec",
+      "crate_version": "1.1.1",
+      "rapx_version": "0.7.70",
+      "toolchain": "nightly-2026-11-02",
+      "status": "COMPLETE",
+      "declared_api_targets": 54,
+      "active_targets": 54,
+      "counts": {
+        "SOUND": 33,
+        "UNSOUND": 5,
+        "UNKNOWN": 16,
+        "NOT_RUN": 0
+      },
+      "percentages": {
+        "SOUND": 61.11,
+        "UNSOUND": 9.26,
+        "UNKNOWN": 29.63,
+        "NOT_RUN": 0.0
+      },
+      "observed_log_records": 54,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 503.63,
+      "finished_at": "2026-11-03T01:49:59.717687+00:00"
+    },
+    {
+      "crate": "rkyv",
+      "crate_version": "0.8.18",
+      "rapx_version": "0.7.70",
+      "toolchain": "nightly-2026-11-02",
+      "status": "COMPLETE",
+      "declared_api_targets": 48,
+      "active_targets": 48,
+      "counts": {
+        "SOUND": 14,
+        "UNSOUND": 9,
+        "UNKNOWN": 25,
+        "NOT_RUN": 0
+      },
+      "percentages": {
+        "SOUND": 29.17,
+        "UNSOUND": 18.75,
+        "UNKNOWN": 52.08,
+        "NOT_RUN": 0.0
+      },
+      "observed_log_records": 51,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 22.96,
+      "finished_at": "2026-11-03T01:41:55.158429+00:00"
+    },
+    {
+      "crate": "slotmap",
+      "crate_version": "1.1.1",
+      "rapx_version": "0.7.70",
+      "toolchain": "nightly-2026-11-02",
+      "status": "TIMEOUT",
+      "declared_api_targets": 43,
+      "active_targets": 43,
+      "counts": {
+        "SOUND": 0,
+        "UNSOUND": 0,
+        "UNKNOWN": 0,
+        "NOT_RUN": 43
+      },
+      "percentages": {
+        "SOUND": 0.0,
+        "UNSOUND": 0.0,
+        "UNKNOWN": 0.0,
+        "NOT_RUN": 100.0
+      },
+      "observed_log_records": 0,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": -15,
+      "timed_out": true,
+      "seconds": 7200.01,
+      "finished_at": "2026-11-03T03:41:32.866109+00:00"
+    },
+    {
+      "crate": "memchr",
+      "crate_version": "2.8.3",
+      "rapx_version": "0.7.70",
+      "toolchain": "nightly-2026-11-02",
+      "status": "COMPLETE",
+      "declared_api_targets": 27,
+      "active_targets": 27,
+      "counts": {
+        "SOUND": 9,
+        "UNSOUND": 10,
+        "UNKNOWN": 8,
+        "NOT_RUN": 0
+      },
+      "percentages": {
+        "SOUND": 33.33,
+        "UNSOUND": 37.04,
+        "UNKNOWN": 29.63,
+        "NOT_RUN": 0.0
+      },
+      "observed_log_records": 27,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 252.39,
+      "finished_at": "2026-11-03T01:45:47.369435+00:00"
+    },
+    {
+      "crate": "smallvec",
+      "crate_version": "1.16.2",
+      "rapx_version": "0.7.70",
+      "toolchain": "nightly-2026-11-02",
+      "status": "TIMEOUT",
+      "declared_api_targets": 40,
+      "active_targets": 40,
+      "counts": {
+        "SOUND": 0,
+        "UNSOUND": 0,
+        "UNKNOWN": 0,
+        "NOT_RUN": 40
+      },
+      "percentages": {
+        "SOUND": 0.0,
+        "UNSOUND": 0.0,
+        "UNKNOWN": 0.0,
+        "NOT_RUN": 100.0
+      },
+      "observed_log_records": 0,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": -15,
+      "timed_out": true,
+      "seconds": 7200.01,
+      "finished_at": "2026-11-03T03:41:34.184955+00:00"
+    },
+    {
+      "crate": "pyo3",
+      "crate_version": "0.29.2",
+      "rapx_version": "0.7.70",
+      "toolchain": "nightly-2026-11-02",
+      "status": "COMPLETE",
+      "declared_api_targets": 33,
+      "active_targets": 33,
+      "counts": {
+        "SOUND": 7,
+        "UNSOUND": 2,
+        "UNKNOWN": 24,
+        "NOT_RUN": 0
+      },
+      "percentages": {
+        "SOUND": 21.21,
+        "UNSOUND": 6.06,
+        "UNKNOWN": 72.73,
+        "NOT_RUN": 0.0
+      },
+      "observed_log_records": 33,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 207.22,
+      "finished_at": "2026-11-03T01:44:59.043777+00:00"
+    }
+  ]
+}
