@@ -1,0 +1,28 @@
+{
+  "crate": "slotmap",
+  "crate_version": "1.1.1",
+  "rapx_version": "0.7.71",
+  "toolchain": "nightly-2026-11-02",
+  "status": "COMPLETE",
+  "declared_api_targets": 43,
+  "active_targets": 43,
+  "counts": {
+    "SOUND": 1,
+    "UNSOUND": 9,
+    "UNKNOWN": 33,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 2.33,
+    "UNSOUND": 20.93,
+    "UNKNOWN": 76.74,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 43,
+  "ignored_log_records": 0,
+  "ignored_log_targets": [],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 248.09,
+  "finished_at": "2026-11-03T15:06:38.457376+00:00"
+}

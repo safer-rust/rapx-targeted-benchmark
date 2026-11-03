@@ -1,0 +1,28 @@
+{
+  "crate": "memchr",
+  "crate_version": "2.8.3",
+  "rapx_version": "0.7.71",
+  "toolchain": "nightly-2026-11-02",
+  "status": "COMPLETE",
+  "declared_api_targets": 27,
+  "active_targets": 27,
+  "counts": {
+    "SOUND": 9,
+    "UNSOUND": 10,
+    "UNKNOWN": 8,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 33.33,
+    "UNSOUND": 37.04,
+    "UNKNOWN": 29.63,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 27,
+  "ignored_log_records": 0,
+  "ignored_log_targets": [],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 85.58,
+  "finished_at": "2026-11-03T15:04:03.322901+00:00"
+}

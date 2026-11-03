@@ -1,0 +1,28 @@
+{
+  "crate": "rkyv",
+  "crate_version": "0.8.18",
+  "rapx_version": "0.7.71",
+  "toolchain": "nightly-2026-11-02",
+  "status": "COMPLETE",
+  "declared_api_targets": 48,
+  "active_targets": 48,
+  "counts": {
+    "SOUND": 14,
+    "UNSOUND": 9,
+    "UNKNOWN": 25,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 29.17,
+    "UNSOUND": 18.75,
+    "UNKNOWN": 52.08,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 51,
+  "ignored_log_records": 0,
+  "ignored_log_targets": [],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 16.05,
+  "finished_at": "2026-11-03T15:02:43.236720+00:00"
+}

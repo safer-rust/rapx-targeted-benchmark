@@ -1,0 +1,28 @@
+{
+  "crate": "bumpalo",
+  "crate_version": "3.20.3",
+  "rapx_version": "0.7.71",
+  "toolchain": "nightly-2026-11-02",
+  "status": "PARTIAL",
+  "declared_api_targets": 17,
+  "active_targets": 17,
+  "counts": {
+    "SOUND": 12,
+    "UNSOUND": 5,
+    "UNKNOWN": 0,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 70.59,
+    "UNSOUND": 29.41,
+    "UNKNOWN": 0.0,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 17,
+  "ignored_log_records": 0,
+  "ignored_log_targets": [],
+  "exit_code": 1,
+  "timed_out": false,
+  "seconds": 35.33,
+  "finished_at": "2026-11-03T15:03:03.946248+00:00"
+}
