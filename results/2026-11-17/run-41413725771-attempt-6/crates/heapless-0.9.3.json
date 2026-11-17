@@ -1,0 +1,28 @@
+{
+  "crate": "heapless",
+  "crate_version": "0.9.3",
+  "rapx_version": "0.7.74",
+  "toolchain": "nightly-2026-11-16",
+  "status": "COMPLETE",
+  "declared_api_targets": 75,
+  "active_targets": 75,
+  "counts": {
+    "SOUND": 6,
+    "UNSOUND": 2,
+    "UNKNOWN": 67,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 8.0,
+    "UNSOUND": 2.67,
+    "UNKNOWN": 89.33,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 75,
+  "ignored_log_records": 0,
+  "ignored_log_targets": [],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 186.0,
+  "finished_at": "2026-11-17T03:36:39.959221+00:00"
+}
