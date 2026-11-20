@@ -1,0 +1,31 @@
+{
+  "crate": "smallvec",
+  "crate_version": "1.16.2",
+  "rapx_version": "0.7.77",
+  "toolchain": "nightly-2026-11-18",
+  "status": "PARTIAL",
+  "declared_api_targets": 40,
+  "active_targets": 40,
+  "counts": {
+    "SOUND": 4,
+    "UNSOUND": 0,
+    "UNKNOWN": 28,
+    "NOT_RUN": 8
+  },
+  "percentages": {
+    "SOUND": 10.0,
+    "UNSOUND": 0.0,
+    "UNKNOWN": 70.0,
+    "NOT_RUN": 20.0
+  },
+  "observed_log_records": 34,
+  "ignored_log_records": 2,
+  "ignored_log_targets": [
+    "<&'a SmallVec<A> as core::iter::IntoIterator>::into_iter",
+    "<&'a mut SmallVec<A> as core::iter::IntoIterator>::into_iter"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 36.12,
+  "finished_at": "2026-11-20T01:46:54.322107+00:00"
+}
