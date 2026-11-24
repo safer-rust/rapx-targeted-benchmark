@@ -1,0 +1,31 @@
+{
+  "crate": "allocator-api2",
+  "crate_version": "0.4.0",
+  "rapx_version": "0.7.80",
+  "toolchain": "nightly-2026-11-23",
+  "status": "COMPLETE",
+  "declared_api_targets": 61,
+  "active_targets": 61,
+  "counts": {
+    "SOUND": 12,
+    "UNSOUND": 18,
+    "UNKNOWN": 31,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 19.67,
+    "UNSOUND": 29.51,
+    "UNKNOWN": 50.82,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 82,
+  "ignored_log_records": 2,
+  "ignored_log_targets": [
+    "<&'a mut vec::Vec<T, A> as std::iter::IntoIterator>::into_iter",
+    "<&'a vec::Vec<T, A> as std::iter::IntoIterator>::into_iter"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 24.6,
+  "finished_at": "2026-11-24T15:25:29.937605+00:00"
+}
