@@ -1,0 +1,28 @@
+{
+  "crate": "openssl",
+  "crate_version": "0.10.81",
+  "rapx_version": "0.7.81",
+  "toolchain": "nightly-2026-11-24",
+  "status": "COMPLETE",
+  "declared_api_targets": 166,
+  "active_targets": 166,
+  "counts": {
+    "SOUND": 5,
+    "UNSOUND": 1,
+    "UNKNOWN": 160,
+    "NOT_RUN": 0
+  },
+  "percentages": {
+    "SOUND": 3.01,
+    "UNSOUND": 0.6,
+    "UNKNOWN": 96.39,
+    "NOT_RUN": 0.0
+  },
+  "observed_log_records": 166,
+  "ignored_log_records": 0,
+  "ignored_log_targets": [],
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 31.66,
+  "finished_at": "2026-11-25T07:25:10.021822+00:00"
+}
