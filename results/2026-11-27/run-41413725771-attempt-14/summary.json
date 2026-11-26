@@ -1,0 +1,309 @@
+{
+  "rapx_version": "0.7.83",
+  "toolchain": "nightly-2026-11-25",
+  "crate_count": 10,
+  "active_targets": 564,
+  "counts": {
+    "SOUND": 94,
+    "UNSOUND": 89,
+    "UNKNOWN": 344,
+    "NOT_RUN": 37
+  },
+  "percentages": {
+    "SOUND": 16.67,
+    "UNSOUND": 15.78,
+    "UNKNOWN": 60.99,
+    "NOT_RUN": 6.56
+  },
+  "unknown_categories": {},
+  "unsupported_operations": [],
+  "created_at": "2026-11-26T19:18:59.684697+00:00",
+  "crates": [
+    {
+      "crate": "openssl",
+      "crate_version": "0.10.81",
+      "rapx_version": "0.7.83",
+      "toolchain": "nightly-2026-11-25",
+      "status": "COMPLETE",
+      "declared_api_targets": 166,
+      "active_targets": 166,
+      "counts": {
+        "SOUND": 5,
+        "UNSOUND": 1,
+        "UNKNOWN": 160,
+        "NOT_RUN": 0
+      },
+      "percentages": {
+        "SOUND": 3.01,
+        "UNSOUND": 0.6,
+        "UNKNOWN": 96.39,
+        "NOT_RUN": 0.0
+      },
+      "observed_log_records": 166,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 51.51,
+      "finished_at": "2026-11-26T17:19:27.920628+00:00"
+    },
+    {
+      "crate": "heapless",
+      "crate_version": "0.9.3",
+      "rapx_version": "0.7.83",
+      "toolchain": "nightly-2026-11-25",
+      "status": "PARTIAL",
+      "declared_api_targets": 75,
+      "active_targets": 75,
+      "counts": {
+        "SOUND": 8,
+        "UNSOUND": 34,
+        "UNKNOWN": 32,
+        "NOT_RUN": 1
+      },
+      "percentages": {
+        "SOUND": 10.67,
+        "UNSOUND": 45.33,
+        "UNKNOWN": 42.67,
+        "NOT_RUN": 1.33
+      },
+      "observed_log_records": 74,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 284.18,
+      "finished_at": "2026-11-26T17:23:20.114270+00:00"
+    },
+    {
+      "crate": "bumpalo",
+      "crate_version": "3.20.3",
+      "rapx_version": "0.7.83",
+      "toolchain": "nightly-2026-11-25",
+      "status": "COMPLETE",
+      "declared_api_targets": 17,
+      "active_targets": 17,
+      "counts": {
+        "SOUND": 11,
+        "UNSOUND": 5,
+        "UNKNOWN": 1,
+        "NOT_RUN": 0
+      },
+      "percentages": {
+        "SOUND": 64.71,
+        "UNSOUND": 29.41,
+        "UNKNOWN": 5.88,
+        "NOT_RUN": 0.0
+      },
+      "observed_log_records": 17,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 378.07,
+      "finished_at": "2026-11-26T17:24:52.333036+00:00"
+    },
+    {
+      "crate": "allocator-api2",
+      "crate_version": "0.4.0",
+      "rapx_version": "0.7.83",
+      "toolchain": "nightly-2026-11-25",
+      "status": "COMPLETE",
+      "declared_api_targets": 61,
+      "active_targets": 61,
+      "counts": {
+        "SOUND": 17,
+        "UNSOUND": 22,
+        "UNKNOWN": 22,
+        "NOT_RUN": 0
+      },
+      "percentages": {
+        "SOUND": 27.87,
+        "UNSOUND": 36.07,
+        "UNKNOWN": 36.07,
+        "NOT_RUN": 0.0
+      },
+      "observed_log_records": 82,
+      "ignored_log_records": 2,
+      "ignored_log_targets": [
+        "<&'a mut vec::Vec<T, A> as std::iter::IntoIterator>::into_iter",
+        "<&'a vec::Vec<T, A> as std::iter::IntoIterator>::into_iter"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 48.82,
+      "finished_at": "2026-11-26T17:19:28.022134+00:00"
+    },
+    {
+      "crate": "bitvec",
+      "crate_version": "1.1.1",
+      "rapx_version": "0.7.83",
+      "toolchain": "nightly-2026-11-25",
+      "status": "COMPLETE",
+      "declared_api_targets": 54,
+      "active_targets": 54,
+      "counts": {
+        "SOUND": 28,
+        "UNSOUND": 5,
+        "UNKNOWN": 21,
+        "NOT_RUN": 0
+      },
+      "percentages": {
+        "SOUND": 51.85,
+        "UNSOUND": 9.26,
+        "UNKNOWN": 38.89,
+        "NOT_RUN": 0.0
+      },
+      "observed_log_records": 54,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 485.07,
+      "finished_at": "2026-11-26T17:26:41.760365+00:00"
+    },
+    {
+      "crate": "rkyv",
+      "crate_version": "0.8.18",
+      "rapx_version": "0.7.83",
+      "toolchain": "nightly-2026-11-25",
+      "status": "PARTIAL",
+      "declared_api_targets": 48,
+      "active_targets": 48,
+      "counts": {
+        "SOUND": 13,
+        "UNSOUND": 12,
+        "UNKNOWN": 23,
+        "NOT_RUN": 0
+      },
+      "percentages": {
+        "SOUND": 27.08,
+        "UNSOUND": 25.0,
+        "UNKNOWN": 47.92,
+        "NOT_RUN": 0.0
+      },
+      "observed_log_records": 51,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 1,
+      "timed_out": false,
+      "seconds": 184.08,
+      "finished_at": "2026-11-26T17:21:42.017089+00:00"
+    },
+    {
+      "crate": "slotmap",
+      "crate_version": "1.1.1",
+      "rapx_version": "0.7.83",
+      "toolchain": "nightly-2026-11-25",
+      "status": "PARTIAL",
+      "declared_api_targets": 43,
+      "active_targets": 43,
+      "counts": {
+        "SOUND": 0,
+        "UNSOUND": 4,
+        "UNKNOWN": 38,
+        "NOT_RUN": 1
+      },
+      "percentages": {
+        "SOUND": 0.0,
+        "UNSOUND": 9.3,
+        "UNKNOWN": 88.37,
+        "NOT_RUN": 2.33
+      },
+      "observed_log_records": 42,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 563.03,
+      "finished_at": "2026-11-26T17:28:05.668393+00:00"
+    },
+    {
+      "crate": "memchr",
+      "crate_version": "2.8.3",
+      "rapx_version": "0.7.83",
+      "toolchain": "nightly-2026-11-25",
+      "status": "TIMEOUT",
+      "declared_api_targets": 27,
+      "active_targets": 27,
+      "counts": {
+        "SOUND": 0,
+        "UNSOUND": 0,
+        "UNKNOWN": 0,
+        "NOT_RUN": 27
+      },
+      "percentages": {
+        "SOUND": 0.0,
+        "UNSOUND": 0.0,
+        "UNKNOWN": 0.0,
+        "NOT_RUN": 100.0
+      },
+      "observed_log_records": 0,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": -15,
+      "timed_out": true,
+      "seconds": 7200.01,
+      "finished_at": "2026-11-26T19:18:40.730111+00:00"
+    },
+    {
+      "crate": "smallvec",
+      "crate_version": "1.16.2",
+      "rapx_version": "0.7.83",
+      "toolchain": "nightly-2026-11-25",
+      "status": "PARTIAL",
+      "declared_api_targets": 40,
+      "active_targets": 40,
+      "counts": {
+        "SOUND": 5,
+        "UNSOUND": 1,
+        "UNKNOWN": 26,
+        "NOT_RUN": 8
+      },
+      "percentages": {
+        "SOUND": 12.5,
+        "UNSOUND": 2.5,
+        "UNKNOWN": 65.0,
+        "NOT_RUN": 20.0
+      },
+      "observed_log_records": 34,
+      "ignored_log_records": 2,
+      "ignored_log_targets": [
+        "<&'a SmallVec<A> as core::iter::IntoIterator>::into_iter",
+        "<&'a mut SmallVec<A> as core::iter::IntoIterator>::into_iter"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 68.31,
+      "finished_at": "2026-11-26T17:19:44.594588+00:00"
+    },
+    {
+      "crate": "pyo3",
+      "crate_version": "0.29.2",
+      "rapx_version": "0.7.83",
+      "toolchain": "nightly-2026-11-25",
+      "status": "COMPLETE",
+      "declared_api_targets": 33,
+      "active_targets": 33,
+      "counts": {
+        "SOUND": 7,
+        "UNSOUND": 5,
+        "UNKNOWN": 21,
+        "NOT_RUN": 0
+      },
+      "percentages": {
+        "SOUND": 21.21,
+        "UNSOUND": 15.15,
+        "UNKNOWN": 63.64,
+        "NOT_RUN": 0.0
+      },
+      "observed_log_records": 33,
+      "ignored_log_records": 0,
+      "ignored_log_targets": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 51.63,
+      "finished_at": "2026-11-26T17:19:34.720179+00:00"
+    }
+  ]
+}
